@@ -9,7 +9,7 @@ Everything runs against local, seeded data persisted with Hive. No backend is re
 | State management | **Bloc / Cubit** (`flutter_bloc`) |
 | Persistence | Hive (`hive`, `hive_flutter`) + app documents directory for receipt images |
 | Platforms | Android (tested on a Samsung S20, Android 13). iOS project is configured (camera / photo usage strings) but was not run. |
-| APK | [`release/hrms-mod-b-release.apk`](release/hrms-mod-b-release.apk) (release build, debug-signed) |
+| APK | [`release/hrms-release.apk.apk`](release/hrms-release.apk.apk) (release build, debug-signed) |
 | Design diagram | [`system_design.png`](system_design.png) · source: [`docs/system_design.png`](docs/system_design.png) |
 
 ---
