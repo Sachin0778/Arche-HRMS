@@ -10,7 +10,7 @@ Everything runs against local, seeded data persisted with Hive. No backend is re
 | Persistence | Hive (`hive`, `hive_flutter`) + app documents directory for receipt images |
 | Platforms | Android (tested on a Samsung S20, Android 13). iOS project is configured (camera / photo usage strings) but was not run. |
 | APK | [`release/hrms-mod-b-release.apk`](release/hrms-mod-b-release.apk) (release build, debug-signed) |
-| Design diagram | [`system_design.png`](system_design.png) · source: [`docs/system_design.svg`](docs/system_design.svg) |
+| Design diagram | [`system_design.png`](system_design.png) · source: [`docs/system_design.png`](docs/system_design.png) |
 
 ---
 
@@ -33,7 +33,7 @@ flutter build apk --release      # produces build/app/outputs/flutter-apk/app-re
 Install the prebuilt APK directly:
 
 ```bash
-adb install -r release/hrms-mod-b-release.apk
+adb install -r release/hrms-release.apk.apk
 ```
 
 ### Demo accounts
@@ -59,25 +59,7 @@ repository stream, with no manual refresh.
 
 ---
 
-## 2. Screenshots
-
-Captured on-device in dark mode (the app follows the system theme; light mode uses the same seed colour).
-
-| Login | Dashboard | Employee Directory |
-|---|---|---|
-| ![](docs/screenshots/01_login.png) | ![](docs/screenshots/02_dashboard.png) | ![](docs/screenshots/03_directory.png) |
-
-| Employee Detail | My Claims | Submit Claim |
-|---|---|---|
-| ![](docs/screenshots/04_employee_detail.png) | ![](docs/screenshots/05_my_claims.png) | ![](docs/screenshots/06_submit_claim.png) |
-
-| Validation | Claim Detail (with receipt) | Admin sheet |
-|---|---|---|
-| ![](docs/screenshots/07_validation.png) | ![](docs/screenshots/08_claim_detail.png) | ![](docs/screenshots/09_admin_sheet.png) |
-
----
-
-## 3. System design
+## 2. System design
 
 ![System design](system_design.png)
 
@@ -87,7 +69,7 @@ every listening Cubit, and the navigation graph between screens.
 
 ---
 
-## 4. Architecture
+## 3. Architecture
 
 The code is organised **feature-first**, and each feature is split into the three classic layers.
 
@@ -151,7 +133,7 @@ Models are stored as plain maps rather than Hive `TypeAdapter`s to avoid code ge
 
 ---
 
-## 5. State management: why Bloc/Cubit
+## 4. State management: why Bloc/Cubit
 
 The assignment allowed Provider, Riverpod or Bloc. I chose **Cubit** from the `flutter_bloc` package:
 
@@ -174,7 +156,7 @@ therefore wraps the destination in `BlocProvider.value` to carry `ClaimsCubit` a
 
 ---
 
-## 6. Functional requirements checklist
+## 5. Functional requirements checklist
 
 | # | Requirement | Where |
 |---|---|---|
@@ -195,7 +177,7 @@ contact fields, iOS permission strings.
 
 ---
 
-## 7. Tests
+## 6. Tests
 
 ```
 test/
@@ -213,7 +195,7 @@ Run with `flutter test`. All 24 pass.
 
 ---
 
-## 8. Known limitations
+## 7. Known limitations
 
 - **Credentials are hard-coded** in `AuthLocalDataSource`. This is what the brief asks for; a real build
   would never ship them.
