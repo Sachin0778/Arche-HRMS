@@ -1,4 +1,4 @@
-# Arche HRMS · Employee Directory & Expense Claims (HRMS-MOD-B)
+# Arche HRMS · Employee Directory & Expense Claims
 
 Flutter reference implementation of the **Employee Directory & Expense Claims** module.
 Everything runs against local, seeded data persisted with Hive. No backend is required.
